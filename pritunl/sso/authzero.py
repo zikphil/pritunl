@@ -42,7 +42,7 @@ def verify_authzero(user_name):
         },
         params={
             'search_engine': 'v3',
-            'email': user_name,
+            'name': user_name,
         },
         timeout=30,
     )
@@ -62,7 +62,7 @@ def verify_authzero(user_name):
     roles = []
     groups = []
     for usr in data:
-        if usr.get('email') != user_name:
+        if usr.get('name') != user_name:
             continue
 
         user_id = usr.get('user_id')
